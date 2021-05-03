@@ -1,0 +1,24 @@
+<header>
+  
+  <h1 style="background-color: rgba(211, 211, 211, 0); color: white;">Real Time Chat Application: {{username}}</h1>
+  
+   
+</header>
+<div class="chat-app">
+  
+  <div class="messages">
+    
+    <div *ngFor="let message of messages" class="message">
+    {{message}}
+    </div>
+    
+  </div>
+  <div *ngIf="username == ''" id="username-div">
+    <input [ngStyle]="usernameValidatation ? {'border':'2px solid red'} : null" id="username-input" [(ngModel)]="usernameIn" type="name" placeholder="You sould type your username for chatting!">
+    <button (click)="getUsername(usernameIn)">Enter</button>
+  </div>
+  <div class="inputs">
+    <input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" class="message-input" />
+    <button (click)="username != '' ? sendMessage(): validatorAlert()" class="button">Send</button>
+  </div>
+</div>

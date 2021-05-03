@@ -1,0 +1,11 @@
+Install the dependencies and devDependencies and start the server.
+
+In VS CODE split the terminal as shown in SS.
+
+ $ cd ./backend
+ $ npm install 
+ $ npm start
+ open another command prompt on app directory
+ $ cd frontend
+ $ npm install
+ $ ng serve -o 
